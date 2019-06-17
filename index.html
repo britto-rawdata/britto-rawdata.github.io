@@ -1,52 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Github.io Test page!</title>
-		<meta charset="utf-8">
-		<meta name="generator" content="Three.js Editor">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-			body {
-				font-family: sans-serif;
-				font-size: 13px;
-				background-color: #000;
-				margin: 0px;
-				overflow: hidden;
-			}
-		</style>
-	</head>
-	<body ontouchstart="">
-		<script src="three.min.js"></script>
-		<script src="app.json"></script>
-		
-		<script>
 
-			var loader = new THREE.FileLoader();
-			loader.load( 'app.json', function ( text ) {
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Countdown</title>
 
-				var player = new APP.Player();
-				player.load( JSON.parse( text ) );
-				player.setSize( window.innerWidth, window.innerHeight );
-				player.play();
+    <script src="countDown.min.js"></script>
+    <link href="style.css" media="all" rel="stylesheet" />
+    <style>
+        body {
+            color: white;
+        }
+    </style>
+</head>
 
-				document.body.appendChild( player.dom );
+<body>
+    <!-- <h2>CountDown 1</h2>
+    <div class="container"></div>
+    <script>
+        var cd = new Countdown({
+            cont: document.querySelector('.container'),
+            endDate: 2020468400000,
+            outputTranslation: {
+                year: 'Years',
+                week: 'custom_string_Weeks',
+                day: 'Days',
+                hour: 'Hours',
+                minute: 'Minutes',
+                second: 'Seconds',
+            },
+            endCallback: null,
+            outputFormat: 'week|day|hour|minute|second',
+        });
+        cd.start();
+    </script>
 
-				window.addEventListener( 'resize', function () {
-					player.setSize( window.innerWidth, window.innerHeight );
-				} );
-			} );
-			
-			var button = document.createElement( 'a' );
-			button.href = 'https://threejs.org/editor/#file=' + location.href.split( '/' ).slice( 0, - 1 ).join( '/' ) + '/app.json';
-			button.style.cssText = 'position: absolute; bottom: 20px; right: 20px; padding: 12px 14px; color: #fff; border: 1px solid #fff; border-radius: 4px; text-decoration: none;';
-			button.target = '_blank';
-			button.textContent = 'EDIT';
-			document.body.appendChild( button );
-				
-		</script>
-		<!-- h1 style="color:yellowgreen">This is a testt page from Github.io!</h1>
-&#x62;&#x72;&#x69;&#x74;&#x74;&#x6F;&#x63;&#x6A;&#x40;&#x67;&#x6D;&#x61;&#x69;&#x6C;&#x2E;&#x63;&#x6F;&#x6D; -->
+    <h2>CountDown 2</h2>
+    <div class="container2"></div>
+    <script>
+        var cd2 = new Countdown({
+            cont: document.querySelector('.container2'),
+            endDate: 1593468412020,
+            outputTranslation: {
+                year: 'Years',
+                week: 'custom_string_Weeks',
+                day: 'Days',
+                hour: 'Hours',
+                minute: 'Minutes',
+                second: 'Seconds',
+            },
+            endCallback: null,
+            outputFormat: 'week|day|hour|minute|second',
+        });
+        cd2.start();
+    </script> -->
 
-	</body>
+
+    <h2>CountUp 1</h2>
+    <div class="container3"></div>
+    <script>
+        var cd3 = new Countdown({
+            cont: document.querySelector('.container3'),
+            countdown: false,
+            endDate: Date.now(),
+            outputTranslation: {
+                year: 'Years',
+                week: 'Weeks',
+                day: 'Days',
+                hour: 'Hours',
+                minute: 'Minutes',
+                second: 'Seconds',
+            },
+            endCallback: null,
+            outputFormat: 'week|day|hour|minute|second',
+        });
+        cd3.start();
+    </script>
+
+    <h2>CountUp 2</h2>
+    <div class="container4"></div>
+    <script>
+        var cd4 = new Countdown({
+            cont: document.querySelector('.container4'),
+            countdown: false,
+            endDate: Date.now() - 50000000,
+            outputTranslation: {
+                year: 'Years',
+                week: 'Weeks',
+                day: 'Days',
+                hour: 'Hours',
+                minute: 'Minutes',
+                second: 'Seconds',
+            },
+            endCallback: null,
+            outputFormat: 'week|day|hour|minute|second',
+        });
+        cd4.start();
+    </script>
+</body>
+
 </html>
